@@ -1,0 +1,26 @@
+%start Sentence
+
+# Imperative: "throw the ball"
+Sentence[] -> VerbPhrase
+Sentence[] -> NounPhrase[number=?n] VerbPhrase[number=?n]
+
+NounPhrase[number=?n] -> Determiner Noun[number=?n]
+NounPhrase[number=?n] -> Determiner Adjective Noun[number=?n]
+
+# Intransitive: "... ran"
+VerbPhrase[number=?n] -> Verb[number=?n]
+VerbPhrase[number=?n] -> Adverb Verb[number=?n]
+
+# Transitive: "... caught the ball"
+VerbPhrase[number=?n] -> Verb[number=?n] NounPhrase
+VerbPhrase[number=?n] -> Adverb Verb[number=?n] NounPhrase
+
+# Ditransitive "the boy gave the girl a dog"
+VerbPhrase[number=?n] -> Verb[number=?n] NounPhrase NounPhrase
+VerbPhrase[number=?n] -> Adverb Verb[number=?n] NounPhrase NounPhrase
+
+
+# Challenges
+# - Pronouns: I, you, he, she, they, ...
+# - The "person" feature: I run, you run, she runs, they run
+# - Pronoun case: I like me, he likes her

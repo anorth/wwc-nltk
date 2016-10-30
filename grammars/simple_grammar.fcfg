@@ -1,0 +1,25 @@
+%start Sentence
+
+# Imperative: "throw the ball"
+Sentence[] -> VerbPhrase
+Sentence[] -> NounPhrase VerbPhrase
+
+NounPhrase -> Determiner Noun
+NounPhrase -> Determiner Adjective Noun
+
+# Intransitive: "... ran"
+VerbPhrase -> Verb
+VerbPhrase -> Adverb Verb
+
+# Transitive: "... caught the ball"
+VerbPhrase -> Verb NounPhrase
+VerbPhrase -> Adverb Verb NounPhrase
+
+# Ditransitive "the boy gave the girl a dog"
+VerbPhrase -> Verb NounPhrase NounPhrase
+VerbPhrase -> Adverb Verb NounPhrase NounPhrase
+
+
+# Challenges
+# - Long chains of adjectives: the big red round ball
+# - Compound nouns: football field, car door, car door handle key hole

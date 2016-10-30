@@ -1,0 +1,12 @@
+The girl runs
+The girl ran
+The girls run
+The girls ran
+
+The boys catch the dogs
+The boy catches the dogs
+
+# These shouldn't parse
+# The girl run
+# The dogs runs
+# The boy give the girl a ball

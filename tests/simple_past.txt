@@ -1,0 +1,12 @@
+The girl ran
+The girl ran quickly
+The boy threw the ball
+The dog caught the ball
+The dog caught the red ball
+The big dog quickly caught the red ball
+The boy gave the girl a dog
+
+# These shouldn't parse
+# The girl run
+# The dogs runs
+# The boy give the girl a ball

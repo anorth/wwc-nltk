@@ -35,7 +35,8 @@ def main(argv):
   grammar = load_grammars(args.grammars)
   parser = FeatureChartParser(grammar, trace=args.verbose, trace_chart_width=80)
 
-  for line in sys.stdin:
+  line = sys.stdin.readline()
+  while line:
     if line[0] == '#': continue
     tokens = line.lower().strip().split()
     if len(tokens) == 0: continue
@@ -51,6 +52,7 @@ def main(argv):
     else:
       print('Could not parse {}'.format(tokens))
     print('\n')
+    line = sys.stdin.readline()
 
 
 if __name__ == '__main__':

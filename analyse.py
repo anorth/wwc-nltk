@@ -26,6 +26,8 @@ def main(argv):
   parser = argparse.ArgumentParser()
   parser.add_argument(dest='grammars', nargs='+',
     help='Grammar file path(s)')
+  parser.add_argument('--draw', dest='draw', action='store_true',
+    help='Draw trees')
   parser.add_argument('-v', '--verbose', dest='verbose', action='store_true',
     help='Be verbose')
   args = parser.parse_args(argv)
@@ -43,6 +45,8 @@ def main(argv):
     if trees:
       for tree in trees:
         print(tree.pformat(margin=80))
+        if args.draw:
+          tree.draw()
         # print(TreePrettyPrinter(tree).text())
     else:
       print('Could not parse {}'.format(tokens))
